@@ -34,6 +34,7 @@ A small Django app demonstrating 'inline editing of products' with AJAX, CSRF pr
 # Setup & Run Instructions
 
 1. **Clone the repo**
-   ```bash
-   git clone https://github.com/yourusername/InlineEditProject.git
-   cd InlineEditProject
+  git clone https://github.com/Samiksha1706/InlineEditProject.git 
+  cd InlineEditProject
+
+  
