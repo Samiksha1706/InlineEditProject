@@ -1,0 +1,74 @@
+{% extends 'productsApp/layouts/base.html' %}
+{% load static %}
+{% block title %}Product List{% endblock title %}
+
+<style>
+  input, select {
+    width: 100%;
+  }
+</style>
+
+{% block content %}
+  <h2 class="mb-4 text-center">📦 Product List</h2>
+  <div class="card shadow-lg border-0">
+    <div class="card-body">
+      <table id="products-table" class="table table-striped table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Available</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+          <tr data-id="{{ product.id }}">
+            <td>{{ forloop.counter }}</td>
+            <td class="PR_NAME">{{ product.PR_NAME }}</td>
+            <td class="PR_PRICE">{{ product.PR_PRICE }}</td>
+            <td class="PR_AVAILABLE">
+              {% if product.PR_AVAILABLE %}
+                ✅
+              {% else %}
+                ❌
+              {% endif %}
+            </td>
+            <td>
+              <button class="btn btn-sm btn-primary edit-btn">Edit</button>
+              <button class="btn btn-sm btn-success save-btn d-none">Save</button>
+              <button class="btn btn-sm btn-secondary cancel-btn d-none">Cancel</button>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    window.CSRF_TOKEN = "{{ csrf_token }}";
+  </script>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
